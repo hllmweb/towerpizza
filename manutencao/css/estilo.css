@@ -1,0 +1,131 @@
+body{
+  background:url("../img/bg.jpg");
+  background-size: cover;
+  font-family:'Lato', sans-serif;
+}
+
+.gradient-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  z-index:0;
+  opacity:0.5;
+}
+#wrapper{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  font-size:0;
+  text-align:center;
+  background:rgba(0,0,0,0.1);
+  z-index:1;
+}
+.vertical-aligner{
+  height:100%;
+  width:0px;
+  background:red;
+  display:inline-block;
+  vertical-align:middle;
+}
+.counter{
+  width:calc(100% - 40px);
+  margin:0 auto;
+  max-width:700px;
+  display:inline-block;
+  vertical-align:middle;
+}
+.counter .logo{
+  text-align:left;
+  position:absolute;
+  left:10px;
+  top:10px;
+}
+.counter .logo img{
+  height:80px;
+  opacity:0.5;
+  transition-duration:0.3s;
+}
+      
+.counter .logo img:hover{
+  opacity:1;
+}
+      
+.counter .under-construction{
+  height:100px;
+}
+      
+.counter h1{
+  text-align:center;
+  color:#fff;
+  font-size:40px;
+  text-transform:uppercase;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+      
+.counter table{
+  width:100%;
+  border-spacing:10px;
+  border-collapse: separate;
+}
+      
+.counter table td{
+  text-align:center;
+  font-size:16px;
+  width:25%;
+}
+      
+.counter table td span{
+  display:block;
+  width:100%;
+  height:100px;
+  color:#fff;
+  font-size:50px;
+  font-weight:900;
+  line-height:100px;
+  margin:0 auto;
+  position:relative;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  border-bottom:4px solid #fff;
+}
+      
+.counter table td:not(:last-child) span::after{
+  content:":";
+  font-size:50px;
+  position:absolute;
+  right:-15px;
+}
+      
+.counter table tr:last-child td{
+  font-size:1.2em;
+  color:#fff;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 620px){
+  .counter .logo{
+    width:100%;
+    left:0;
+    text-align:center;
+  }
+  .counter h1{
+    font-size:28px;
+  }
+  .counter table td span,
+  .counter table td:not(:last-child) span::after{
+    font-size:40px;
+  }
+  .counter table td span{
+    height:70px;
+    line-height:70px;
+    border-bottom:2px solid #fff;
+  }
+  .counter{
+    width:calc(100% - 20px);
+  }
+  
+}

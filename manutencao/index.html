@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Tower Pizza</title>
+	<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+  <div class="gradient-bg"></div>
+    <div id="wrapper">
+      <div class="vertical-aligner"></div>
+      <div class="counter">
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/logo-branco.png" alt="Logotipo Tower Pizza" title="Tower Pizza">
+          </a>
+        </div>
+
+        <h1>Aguarde, nosso site está em construção!</h1>
+        <table>
+          <tbody><tr>
+            <td><span id="days">00</span></td>
+            <td><span id="hours">00</span></td>
+            <td><span id="minutes">00</span></td>
+            <td><span id="seconds">00</span></td>
+          </tr>
+
+          <tr>
+            <td>Dias</td>
+            <td>Horas</td>
+            <td>Minutos</td>
+            <td>Segundos</td>
+          </tr>
+        </tbody></table>
+
+      </div>
+    </div>
+    
+    <script>
+    function pad(n, width, z) {
+      z = z || '0';
+      n = n + '';
+      return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+    }
+      
+    var countDownDate = new Date("Aug 17, 2018 12:30:00").getTime();
+
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerHTML = pad(days, 2);
+      document.getElementById("hours").innerHTML = pad(hours, 2);
+      document.getElementById("minutes").innerHTML = pad(minutes, 2);
+      document.getElementById("seconds").innerHTML = pad(seconds, 2);
+      
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("days").innerHTML = 0;
+        document.getElementById("hours").innerHTML = 0;
+        document.getElementById("minutes").innerHTML = 0;
+        document.getElementById("seconds").innerHTML = 0;
+      }
+    }, 1000);
+    </script>
+	
+</body>
+</html>
